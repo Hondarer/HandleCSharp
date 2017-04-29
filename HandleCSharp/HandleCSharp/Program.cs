@@ -421,7 +421,6 @@ namespace HandleCSharp
                     throw new Win32Exception(Marshal.GetLastWin32Error().ToString());
                 }
 
-
                 if (OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES, out hToken) == false)
                 {
                     throw new Win32Exception(Marshal.GetLastWin32Error().ToString());
