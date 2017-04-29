@@ -21,17 +21,6 @@ namespace HandleCSharp
 
         #endregion
 
-        #region エラー処理
-
-        /// <summary>
-        /// Retrieves the calling thread's last-error code value.
-        /// </summary>
-        /// <returns>Calling thread's last-error code.</returns>
-        [DllImport("kernel32.dll")]
-        public static extern uint GetLastError();
-
-        #endregion
-
         #region ハンドル操作
 
         /// <summary>
@@ -429,21 +418,18 @@ namespace HandleCSharp
 
                 if (LookupPrivilegeValue(string.Empty, privilegeName, out privileges.Privileges[0].Luid) == false)
                 {
-                    uint lastError = GetLastError();
-                    throw new Win32Exception(lastError.ToString());
+                    throw new Win32Exception(Marshal.GetLastWin32Error().ToString());
                 }
 
 
                 if (OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES, out hToken) == false)
                 {
-                    uint lastError = GetLastError();
-                    throw new Win32Exception(lastError.ToString());
+                    throw new Win32Exception(Marshal.GetLastWin32Error().ToString());
                 }
 
                 if (AdjustTokenPrivileges(hToken, false, ref privileges, (uint)Marshal.SizeOf(privileges), IntPtr.Zero, IntPtr.Zero) == false)
                 {
-                    uint lastError = GetLastError();
-                    throw new Win32Exception(lastError.ToString());
+                    throw new Win32Exception(Marshal.GetLastWin32Error().ToString());
                 }
             }
             finally
