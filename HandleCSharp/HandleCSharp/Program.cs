@@ -817,7 +817,7 @@ namespace HandleCSharp
         /// <summary>
         /// Tells NtQuerySystemInformation and NtSetSystemInformation what you would like to read/change.
         /// </summary>
-        public enum SystemInformationClass
+        public enum SystemInformationClass : int
         {
             SystemBasicInformation = 0x0000,
             SystemProcessorInformation = 0x0001,
