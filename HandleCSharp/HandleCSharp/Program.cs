@@ -10,7 +10,7 @@ namespace HandleCSharp
     /// <summary>
     /// 
     /// </summary>
-    class Program
+    public class Program
     {
         #region 基本的な宣言
 
@@ -10210,155 +10210,754 @@ namespace HandleCSharp
         /// </summary>
         public enum SystemInformationClass : int
         {
+            /// <summary> 
+            /// SystemBasicInformation
+            /// </summary>
             SystemBasicInformation = 0x0000,
+
+            /// <summary> 
+            /// SystemProcessorInformation
+            /// </summary>
             SystemProcessorInformation = 0x0001,
+
+            /// <summary> 
+            /// SystemPerformanceInformation
+            /// </summary>
             SystemPerformanceInformation = 0x0002,
+
+            /// <summary> 
+            /// SystemTimeOfDayInformation
+            /// </summary>
             SystemTimeOfDayInformation = 0x0003,
+
+            /// <summary> 
+            /// SystemPathInformation
+            /// </summary>
             SystemPathInformation = 0x0004,
+
+            /// <summary> 
+            /// SystemProcessInformation
+            /// </summary>
             SystemProcessInformation = 0x0005,
+
+            /// <summary> 
+            /// SystemCallCountInformation
+            /// </summary>
             SystemCallCountInformation = 0x0006,
+
+            /// <summary> 
+            /// SystemDeviceInformation
+            /// </summary>
             SystemDeviceInformation = 0x0007,
+
+            /// <summary> 
+            /// SystemProcessorPerformanceInformation
+            /// </summary>
             SystemProcessorPerformanceInformation = 0x0008,
+
+            /// <summary> 
+            /// SystemFlagsInformation
+            /// </summary>
             SystemFlagsInformation = 0x0009,
-            SystemCallTimeInformation = 0x000A,
-            SystemModuleInformation = 0x000B,
-            SystemLocksInformation = 0x000C,
-            SystemStackTraceInformation = 0x000D,
-            SystemPagedPoolInformation = 0x000E,
-            SystemNonPagedPoolInformation = 0x000F,
+
+            /// <summary> 
+            /// SystemCallTimeInformation
+            /// </summary>
+            SystemCallTimeInformation = 0x000a,
+
+            /// <summary> 
+            /// SystemModuleInformation
+            /// </summary>
+            SystemModuleInformation = 0x000b,
+
+            /// <summary> 
+            /// SystemLocksInformation
+            /// </summary>
+            SystemLocksInformation = 0x000c,
+
+            /// <summary> 
+            /// SystemStackTraceInformation
+            /// </summary>
+            SystemStackTraceInformation = 0x000d,
+
+            /// <summary> 
+            /// SystemPagedPoolInformation
+            /// </summary>
+            SystemPagedPoolInformation = 0x000e,
+
+            /// <summary> 
+            /// SystemNonPagedPoolInformation
+            /// </summary>
+            SystemNonPagedPoolInformation = 0x000f,
+
+            /// <summary> 
+            /// SystemHandleInformation
+            /// </summary>
             SystemHandleInformation = 0x0010,
+
+            /// <summary> 
+            /// SystemObjectInformation
+            /// </summary>
             SystemObjectInformation = 0x0011,
+
+            /// <summary> 
+            /// SystemPageFileInformation
+            /// </summary>
             SystemPageFileInformation = 0x0012,
+
+            /// <summary> 
+            /// SystemVdmInstemulInformation
+            /// </summary>
             SystemVdmInstemulInformation = 0x0013,
+
+            /// <summary> 
+            /// SystemVdmBopInformation
+            /// </summary>
             SystemVdmBopInformation = 0x0014,
+
+            /// <summary> 
+            /// SystemFileCacheInformation
+            /// </summary>
             SystemFileCacheInformation = 0x0015,
+
+            /// <summary> 
+            /// SystemPoolTagInformation
+            /// </summary>
             SystemPoolTagInformation = 0x0016,
+
+            /// <summary> 
+            /// SystemInterruptInformation
+            /// </summary>
             SystemInterruptInformation = 0x0017,
+
+            /// <summary> 
+            /// SystemDpcBehaviorInformation
+            /// </summary>
             SystemDpcBehaviorInformation = 0x0018,
+
+            /// <summary> 
+            /// SystemFullMemoryInformation
+            /// </summary>
             SystemFullMemoryInformation = 0x0019,
-            SystemLoadGdiDriverInformation = 0x001A,
-            SystemUnloadGdiDriverInformation = 0x001B,
-            SystemTimeAdjustmentInformation = 0x001C,
-            SystemSummaryMemoryInformation = 0x001D,
-            SystemMirrorMemoryInformation = 0x001E,
-            SystemPerformanceTraceInformation = 0x001F,
+
+            /// <summary> 
+            /// SystemLoadGdiDriverInformation
+            /// </summary>
+            SystemLoadGdiDriverInformation = 0x001a,
+
+            /// <summary> 
+            /// SystemUnloadGdiDriverInformation
+            /// </summary>
+            SystemUnloadGdiDriverInformation = 0x001b,
+
+            /// <summary> 
+            /// SystemTimeAdjustmentInformation
+            /// </summary>
+            SystemTimeAdjustmentInformation = 0x001c,
+
+            /// <summary> 
+            /// SystemSummaryMemoryInformation
+            /// </summary>
+            SystemSummaryMemoryInformation = 0x001d,
+
+            /// <summary> 
+            /// SystemMirrorMemoryInformation
+            /// </summary>
+            SystemMirrorMemoryInformation = 0x001e,
+
+            /// <summary> 
+            /// SystemPerformanceTraceInformation
+            /// </summary>
+            SystemPerformanceTraceInformation = 0x001f,
+
+            /// <summary> 
+            /// SystemCrashDumpInformation
+            /// </summary>
             SystemCrashDumpInformation = 0x0020,
+
+            /// <summary> 
+            /// SystemExceptionInformation
+            /// </summary>
             SystemExceptionInformation = 0x0021,
+
+            /// <summary> 
+            /// SystemCrashDumpStateInformation
+            /// </summary>
             SystemCrashDumpStateInformation = 0x0022,
+
+            /// <summary> 
+            /// SystemKernelDebuggerInformation
+            /// </summary>
             SystemKernelDebuggerInformation = 0x0023,
+
+            /// <summary> 
+            /// SystemContextSwitchInformation
+            /// </summary>
             SystemContextSwitchInformation = 0x0024,
+
+            /// <summary> 
+            /// SystemRegistryQuotaInformation
+            /// </summary>
             SystemRegistryQuotaInformation = 0x0025,
+
+            /// <summary> 
+            /// SystemExtendServiceTableInformation
+            /// </summary>
             SystemExtendServiceTableInformation = 0x0026,
+
+            /// <summary> 
+            /// SystemPrioritySeperation
+            /// </summary>
             SystemPrioritySeperation = 0x0027,
+
+            /// <summary> 
+            /// SystemVerifierAddDriverInformation
+            /// </summary>
             SystemVerifierAddDriverInformation = 0x0028,
+
+            /// <summary> 
+            /// SystemVerifierRemoveDriverInformation
+            /// </summary>
             SystemVerifierRemoveDriverInformation = 0x0029,
-            SystemProcessorIdleInformation = 0x002A,
-            SystemLegacyDriverInformation = 0x002B,
-            SystemCurrentTimeZoneInformation = 0x002C,
-            SystemLookasideInformation = 0x002D,
-            SystemTimeSlipNotification = 0x002E,
-            SystemSessionCreate = 0x002F,
+
+            /// <summary> 
+            /// SystemProcessorIdleInformation
+            /// </summary>
+            SystemProcessorIdleInformation = 0x002a,
+
+            /// <summary> 
+            /// SystemLegacyDriverInformation
+            /// </summary>
+            SystemLegacyDriverInformation = 0x002b,
+
+            /// <summary> 
+            /// SystemCurrentTimeZoneInformation
+            /// </summary>
+            SystemCurrentTimeZoneInformation = 0x002c,
+
+            /// <summary> 
+            /// SystemLookasideInformation
+            /// </summary>
+            SystemLookasideInformation = 0x002d,
+
+            /// <summary> 
+            /// SystemTimeSlipNotification
+            /// </summary>
+            SystemTimeSlipNotification = 0x002e,
+
+            /// <summary> 
+            /// SystemSessionCreate
+            /// </summary>
+            SystemSessionCreate = 0x002f,
+
+            /// <summary> 
+            /// SystemSessionDetach
+            /// </summary>
             SystemSessionDetach = 0x0030,
+
+            /// <summary> 
+            /// SystemSessionInformation
+            /// </summary>
             SystemSessionInformation = 0x0031,
+
+            /// <summary> 
+            /// SystemRangeStartInformation
+            /// </summary>
             SystemRangeStartInformation = 0x0032,
+
+            /// <summary> 
+            /// SystemVerifierInformation
+            /// </summary>
             SystemVerifierInformation = 0x0033,
+
+            /// <summary> 
+            /// SystemVerifierThunkExtend
+            /// </summary>
             SystemVerifierThunkExtend = 0x0034,
+
+            /// <summary> 
+            /// SystemSessionProcessInformation
+            /// </summary>
             SystemSessionProcessInformation = 0x0035,
+
+            /// <summary> 
+            /// SystemLoadGdiDriverInSystemSpace
+            /// </summary>
             SystemLoadGdiDriverInSystemSpace = 0x0036,
+
+            /// <summary> 
+            /// SystemNumaProcessorMap
+            /// </summary>
             SystemNumaProcessorMap = 0x0037,
+
+            /// <summary> 
+            /// SystemPrefetcherInformation
+            /// </summary>
             SystemPrefetcherInformation = 0x0038,
+
+            /// <summary> 
+            /// SystemExtendedProcessInformation
+            /// </summary>
             SystemExtendedProcessInformation = 0x0039,
-            SystemRecommendedSharedDataAlignment = 0x003A,
-            SystemComPlusPackage = 0x003B,
-            SystemNumaAvailableMemory = 0x003C,
-            SystemProcessorPowerInformation = 0x003D,
-            SystemEmulationBasicInformation = 0x003E,
-            SystemEmulationProcessorInformation = 0x003F,
+
+            /// <summary> 
+            /// SystemRecommendedSharedDataAlignment
+            /// </summary>
+            SystemRecommendedSharedDataAlignment = 0x003a,
+
+            /// <summary> 
+            /// SystemComPlusPackage
+            /// </summary>
+            SystemComPlusPackage = 0x003b,
+
+            /// <summary> 
+            /// SystemNumaAvailableMemory
+            /// </summary>
+            SystemNumaAvailableMemory = 0x003c,
+
+            /// <summary> 
+            /// SystemProcessorPowerInformation
+            /// </summary>
+            SystemProcessorPowerInformation = 0x003d,
+
+            /// <summary> 
+            /// SystemEmulationBasicInformation
+            /// </summary>
+            SystemEmulationBasicInformation = 0x003e,
+
+            /// <summary> 
+            /// SystemEmulationProcessorInformation
+            /// </summary>
+            SystemEmulationProcessorInformation = 0x003f,
+
+            /// <summary> 
+            /// SystemExtendedHandleInformation
+            /// </summary>
             SystemExtendedHandleInformation = 0x0040,
+
+            /// <summary> 
+            /// SystemLostDelayedWriteInformation
+            /// </summary>
             SystemLostDelayedWriteInformation = 0x0041,
+
+            /// <summary> 
+            /// SystemBigPoolInformation
+            /// </summary>
             SystemBigPoolInformation = 0x0042,
+
+            /// <summary> 
+            /// SystemSessionPoolTagInformation
+            /// </summary>
             SystemSessionPoolTagInformation = 0x0043,
+
+            /// <summary> 
+            /// SystemSessionMappedViewInformation
+            /// </summary>
             SystemSessionMappedViewInformation = 0x0044,
+
+            /// <summary> 
+            /// SystemHotpatchInformation
+            /// </summary>
             SystemHotpatchInformation = 0x0045,
+
+            /// <summary> 
+            /// SystemObjectSecurityMode
+            /// </summary>
             SystemObjectSecurityMode = 0x0046,
+
+            /// <summary> 
+            /// SystemWatchdogTimerHandler
+            /// </summary>
             SystemWatchdogTimerHandler = 0x0047,
+
+            /// <summary> 
+            /// SystemWatchdogTimerInformation
+            /// </summary>
             SystemWatchdogTimerInformation = 0x0048,
+
+            /// <summary> 
+            /// SystemLogicalProcessorInformation
+            /// </summary>
             SystemLogicalProcessorInformation = 0x0049,
-            SystemWow64SharedInformationObsolete = 0x004A,
-            SystemRegisterFirmwareTableInformationHandler = 0x004B,
-            SystemFirmwareTableInformation = 0x004C,
-            SystemModuleInformationEx = 0x004D,
-            SystemVerifierTriageInformation = 0x004E,
-            SystemSuperfetchInformation = 0x004F,
+
+            /// <summary> 
+            /// SystemWow64SharedInformationObsolete
+            /// </summary>
+            SystemWow64SharedInformationObsolete = 0x004a,
+
+            /// <summary> 
+            /// SystemRegisterFirmwareTableInformationHandler
+            /// </summary>
+            SystemRegisterFirmwareTableInformationHandler = 0x004b,
+
+            /// <summary> 
+            /// SystemFirmwareTableInformation
+            /// </summary>
+            SystemFirmwareTableInformation = 0x004c,
+
+            /// <summary> 
+            /// SystemModuleInformationEx
+            /// </summary>
+            SystemModuleInformationEx = 0x004d,
+
+            /// <summary> 
+            /// SystemVerifierTriageInformation
+            /// </summary>
+            SystemVerifierTriageInformation = 0x004e,
+
+            /// <summary> 
+            /// SystemSuperfetchInformation
+            /// </summary>
+            SystemSuperfetchInformation = 0x004f,
+
+            /// <summary> 
+            /// SystemMemoryListInformation
+            /// </summary>
             SystemMemoryListInformation = 0x0050,
+
+            /// <summary> 
+            /// SystemFileCacheInformationEx
+            /// </summary>
             SystemFileCacheInformationEx = 0x0051,
+
+            /// <summary> 
+            /// SystemThreadPriorityClientIdInformation
+            /// </summary>
             SystemThreadPriorityClientIdInformation = 0x0052,
+
+            /// <summary> 
+            /// SystemProcessorIdleCycleTimeInformation
+            /// </summary>
             SystemProcessorIdleCycleTimeInformation = 0x0053,
+
+            /// <summary> 
+            /// SystemVerifierCancellationInformation
+            /// </summary>
             SystemVerifierCancellationInformation = 0x0054,
+
+            /// <summary> 
+            /// SystemProcessorPowerInformationEx
+            /// </summary>
             SystemProcessorPowerInformationEx = 0x0055,
+
+            /// <summary> 
+            /// SystemRefTraceInformation
+            /// </summary>
             SystemRefTraceInformation = 0x0056,
+
+            /// <summary> 
+            /// SystemSpecialPoolInformation
+            /// </summary>
             SystemSpecialPoolInformation = 0x0057,
+
+            /// <summary> 
+            /// SystemProcessIdInformation
+            /// </summary>
             SystemProcessIdInformation = 0x0058,
+
+            /// <summary> 
+            /// SystemErrorPortInformation
+            /// </summary>
             SystemErrorPortInformation = 0x0059,
-            SystemBootEnvironmentInformation = 0x005A,
-            SystemHypervisorInformation = 0x005B,
-            SystemVerifierInformationEx = 0x005C,
-            SystemTimeZoneInformation = 0x005D,
-            SystemImageFileExecutionOptionsInformation = 0x005E,
-            SystemCoverageInformation = 0x005F,
+
+            /// <summary> 
+            /// SystemBootEnvironmentInformation
+            /// </summary>
+            SystemBootEnvironmentInformation = 0x005a,
+
+            /// <summary> 
+            /// SystemHypervisorInformation
+            /// </summary>
+            SystemHypervisorInformation = 0x005b,
+
+            /// <summary> 
+            /// SystemVerifierInformationEx
+            /// </summary>
+            SystemVerifierInformationEx = 0x005c,
+
+            /// <summary> 
+            /// SystemTimeZoneInformation
+            /// </summary>
+            SystemTimeZoneInformation = 0x005d,
+
+            /// <summary> 
+            /// SystemImageFileExecutionOptionsInformation
+            /// </summary>
+            SystemImageFileExecutionOptionsInformation = 0x005e,
+
+            /// <summary> 
+            /// SystemCoverageInformation
+            /// </summary>
+            SystemCoverageInformation = 0x005f,
+
+            /// <summary> 
+            /// SystemPrefetchPatchInformation
+            /// </summary>
             SystemPrefetchPatchInformation = 0x0060,
+
+            /// <summary> 
+            /// SystemVerifierFaultsInformation
+            /// </summary>
             SystemVerifierFaultsInformation = 0x0061,
+
+            /// <summary> 
+            /// SystemSystemPartitionInformation
+            /// </summary>
             SystemSystemPartitionInformation = 0x0062,
+
+            /// <summary> 
+            /// SystemSystemDiskInformation
+            /// </summary>
             SystemSystemDiskInformation = 0x0063,
+
+            /// <summary> 
+            /// SystemProcessorPerformanceDistribution
+            /// </summary>
             SystemProcessorPerformanceDistribution = 0x0064,
+
+            /// <summary> 
+            /// SystemNumaProximityNodeInformation
+            /// </summary>
             SystemNumaProximityNodeInformation = 0x0065,
+
+            /// <summary> 
+            /// SystemDynamicTimeZoneInformation
+            /// </summary>
             SystemDynamicTimeZoneInformation = 0x0066,
+
+            /// <summary> 
+            /// SystemCodeIntegrityInformation
+            /// </summary>
             SystemCodeIntegrityInformation = 0x0067,
+
+            /// <summary> 
+            /// SystemProcessorMicrocodeUpdateInformation
+            /// </summary>
             SystemProcessorMicrocodeUpdateInformation = 0x0068,
+
+            /// <summary> 
+            /// SystemProcessorBrandString
+            /// </summary>
             SystemProcessorBrandString = 0x0069,
-            SystemVirtualAddressInformation = 0x006A,
-            SystemLogicalProcessorAndGroupInformation = 0x006B,
-            SystemProcessorCycleTimeInformation = 0x006C,
-            SystemStoreInformation = 0x006D,
-            SystemRegistryAppendString = 0x006E,
-            SystemAitSamplingValue = 0x006F,
+
+            /// <summary> 
+            /// SystemVirtualAddressInformation
+            /// </summary>
+            SystemVirtualAddressInformation = 0x006a,
+
+            /// <summary> 
+            /// SystemLogicalProcessorAndGroupInformation
+            /// </summary>
+            SystemLogicalProcessorAndGroupInformation = 0x006b,
+
+            /// <summary> 
+            /// SystemProcessorCycleTimeInformation
+            /// </summary>
+            SystemProcessorCycleTimeInformation = 0x006c,
+
+            /// <summary> 
+            /// SystemStoreInformation
+            /// </summary>
+            SystemStoreInformation = 0x006d,
+
+            /// <summary> 
+            /// SystemRegistryAppendString
+            /// </summary>
+            SystemRegistryAppendString = 0x006e,
+
+            /// <summary> 
+            /// SystemAitSamplingValue
+            /// </summary>
+            SystemAitSamplingValue = 0x006f,
+
+            /// <summary> 
+            /// SystemVhdBootInformation
+            /// </summary>
             SystemVhdBootInformation = 0x0070,
+
+            /// <summary> 
+            /// SystemCpuQuotaInformation
+            /// </summary>
             SystemCpuQuotaInformation = 0x0071,
+
+            /// <summary> 
+            /// SystemNativeBasicInformation
+            /// </summary>
             SystemNativeBasicInformation = 0x0072,
+
+            /// <summary> 
+            /// SystemErrorPortTimeouts
+            /// </summary>
             SystemErrorPortTimeouts = 0x0073,
+
+            /// <summary> 
+            /// SystemLowPriorityIoInformation
+            /// </summary>
             SystemLowPriorityIoInformation = 0x0074,
+
+            /// <summary> 
+            /// SystemBootEntropyInformation
+            /// </summary>
             SystemBootEntropyInformation = 0x0075,
+
+            /// <summary> 
+            /// SystemVerifierCountersInformation
+            /// </summary>
             SystemVerifierCountersInformation = 0x0076,
+
+            /// <summary> 
+            /// SystemPagedPoolInformationEx
+            /// </summary>
             SystemPagedPoolInformationEx = 0x0077,
+
+            /// <summary> 
+            /// SystemSystemPtesInformationEx
+            /// </summary>
             SystemSystemPtesInformationEx = 0x0078,
+
+            /// <summary> 
+            /// SystemNodeDistanceInformation
+            /// </summary>
             SystemNodeDistanceInformation = 0x0079,
-            SystemAcpiAuditInformation = 0x007A,
-            SystemBasicPerformanceInformation = 0x007B,
-            SystemQueryPerformanceCounterInformation = 0x007C,
-            SystemSessionBigPoolInformation = 0x007D,
-            SystemBootGraphicsInformation = 0x007E,
-            SystemScrubPhysicalMemoryInformation = 0x007F,
+
+            /// <summary> 
+            /// SystemAcpiAuditInformation
+            /// </summary>
+            SystemAcpiAuditInformation = 0x007a,
+
+            /// <summary> 
+            /// SystemBasicPerformanceInformation
+            /// </summary>
+            SystemBasicPerformanceInformation = 0x007b,
+
+            /// <summary> 
+            /// SystemQueryPerformanceCounterInformation
+            /// </summary>
+            SystemQueryPerformanceCounterInformation = 0x007c,
+
+            /// <summary> 
+            /// SystemSessionBigPoolInformation
+            /// </summary>
+            SystemSessionBigPoolInformation = 0x007d,
+
+            /// <summary> 
+            /// SystemBootGraphicsInformation
+            /// </summary>
+            SystemBootGraphicsInformation = 0x007e,
+
+            /// <summary> 
+            /// SystemScrubPhysicalMemoryInformation
+            /// </summary>
+            SystemScrubPhysicalMemoryInformation = 0x007f,
+
+            /// <summary> 
+            /// SystemBadPageInformation
+            /// </summary>
             SystemBadPageInformation = 0x0080,
+
+            /// <summary> 
+            /// SystemProcessorProfileControlArea
+            /// </summary>
             SystemProcessorProfileControlArea = 0x0081,
+
+            /// <summary> 
+            /// SystemCombinePhysicalMemoryInformation
+            /// </summary>
             SystemCombinePhysicalMemoryInformation = 0x0082,
+
+            /// <summary> 
+            /// SystemEntropyInterruptTimingInformation
+            /// </summary>
             SystemEntropyInterruptTimingInformation = 0x0083,
+
+            /// <summary> 
+            /// SystemConsoleInformation
+            /// </summary>
             SystemConsoleInformation = 0x0084,
+
+            /// <summary> 
+            /// SystemPlatformBinaryInformation
+            /// </summary>
             SystemPlatformBinaryInformation = 0x0085,
+
+            /// <summary> 
+            /// SystemThrottleNotificationInformation
+            /// </summary>
             SystemThrottleNotificationInformation = 0x0086,
+
+            /// <summary> 
+            /// SystemHypervisorProcessorCountInformation
+            /// </summary>
             SystemHypervisorProcessorCountInformation = 0x0087,
+
+            /// <summary> 
+            /// SystemDeviceDataInformation
+            /// </summary>
             SystemDeviceDataInformation = 0x0088,
+
+            /// <summary> 
+            /// SystemDeviceDataEnumerationInformation
+            /// </summary>
             SystemDeviceDataEnumerationInformation = 0x0089,
-            SystemMemoryTopologyInformation = 0x008A,
-            SystemMemoryChannelInformation = 0x008B,
-            SystemBootLogoInformation = 0x008C,
-            SystemProcessorPerformanceInformationEx = 0x008D,
-            SystemSpare0 = 0x008E,
-            SystemSecureBootPolicyInformation = 0x008F,
+
+            /// <summary> 
+            /// SystemMemoryTopologyInformation
+            /// </summary>
+            SystemMemoryTopologyInformation = 0x008a,
+
+            /// <summary> 
+            /// SystemMemoryChannelInformation
+            /// </summary>
+            SystemMemoryChannelInformation = 0x008b,
+
+            /// <summary> 
+            /// SystemBootLogoInformation
+            /// </summary>
+            SystemBootLogoInformation = 0x008c,
+
+            /// <summary> 
+            /// SystemProcessorPerformanceInformationEx
+            /// </summary>
+            SystemProcessorPerformanceInformationEx = 0x008d,
+
+            /// <summary> 
+            /// SystemSpare0
+            /// </summary>
+            SystemSpare0 = 0x008e,
+
+            /// <summary> 
+            /// SystemSecureBootPolicyInformation
+            /// </summary>
+            SystemSecureBootPolicyInformation = 0x008f,
+
+            /// <summary> 
+            /// SystemPageFileInformationEx
+            /// </summary>
             SystemPageFileInformationEx = 0x0090,
+
+            /// <summary> 
+            /// SystemSecureBootInformation
+            /// </summary>
             SystemSecureBootInformation = 0x0091,
+
+            /// <summary> 
+            /// SystemEntropyInterruptTimingRawInformation
+            /// </summary>
             SystemEntropyInterruptTimingRawInformation = 0x0092,
+
+            /// <summary> 
+            /// SystemPortableWorkspaceEfiLauncherInformation
+            /// </summary>
             SystemPortableWorkspaceEfiLauncherInformation = 0x0093,
+
+            /// <summary> 
+            /// SystemFullProcessInformation
+            /// </summary>
             SystemFullProcessInformation = 0x0094,
+
+            /// <summary> 
+            /// MaxSystemInfoClass
+            /// </summary>
             MaxSystemInfoClass = 0x0095
         }
 
@@ -11011,9 +11610,9 @@ namespace HandleCSharp
                 SYSTEM_EXTENDED_HANDLE_INFORMATION exHandleInfo = (SYSTEM_EXTENDED_HANDLE_INFORMATION)Marshal.PtrToStructure(pExHandleInfo, typeof(SYSTEM_EXTENDED_HANDLE_INFORMATION));
                 int nHandles = (int)exHandleInfo.NumberOfHandles;
 
-                Console.WriteLine("Handles: {0}\r\n", nHandles);
+                //Console.WriteLine("Handles: {0}\r\n", nHandles);
 
-                Console.WriteLine("Handle\tPID\tGrantedAccess\tAttributes\tCount\tType\tName");
+                Console.WriteLine("\"Handle\"\t\"PID\"\t\"GrantedAccess\"\t\"Attributes\"\t\"Count\"\t\"Type\"\t\"Name\"");
 
                 // 取得できたハンドル分繰り返す
                 for (int iHandle = 0; iHandle < nHandles; iHandle++)
@@ -11152,7 +11751,7 @@ namespace HandleCSharp
                     }
                 }
 
-                Console.WriteLine("\r\nDone.");
+                //Console.WriteLine("\r\nDone.");
             }
             finally
             {
