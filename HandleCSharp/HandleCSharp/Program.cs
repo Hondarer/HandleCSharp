@@ -11650,7 +11650,7 @@ namespace HandleCSharp
                         if (hProcess == IntPtr.Zero)
                         {
                             // そのプロセスは開けなかった。
-                            Console.WriteLine("\t-1\t\"{0}\"\t\"\"", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
+                            Console.WriteLine("\t\t\"{0}\"\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
                             continue;
                         }
 
@@ -11660,7 +11660,7 @@ namespace HandleCSharp
                         if (dupResult != NtStatus.STATUS_SUCCESS)
                         {
                             // そのハンドルは複製できなかった。
-                            Console.WriteLine("\t-1\t\"{0}\"\t\"\"", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
+                            Console.WriteLine("\t\t\"{0}\"\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
                             continue;
                         }
 
@@ -11679,7 +11679,7 @@ namespace HandleCSharp
                         if (basicInfoResult != NtStatus.STATUS_SUCCESS)
                         {
                             // オブジェクト基本情報を取得できなかった。
-                            Console.WriteLine("\t-1\t\"{0}\"\t\"\"", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
+                            Console.WriteLine("\t\t\"{0}\"\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
                             continue;
                         }
 
@@ -11694,6 +11694,7 @@ namespace HandleCSharp
                         // オブジェクトの名称を取得する
                         OBJECT_NAME_INFORMATION nameInfo;
                         uint nameLen = basicInfo.NameInformationLength;
+                        string objectName = null;
                         if (nameLen == 0)
                         {
                             // ファイルパスの場合は、既定の長さでバッファを確保する
@@ -11705,7 +11706,6 @@ namespace HandleCSharp
                         {
                             // 名前を問い合わせると帰ってこないケースは名称問い合わせをスキップする
                             // Query the object name (unless it has an access of 0x0012019f, on which NtQueryObject could hang.
-                            nameInfo = default(OBJECT_NAME_INFORMATION);
                         }
                         else
                         {
@@ -11718,17 +11718,18 @@ namespace HandleCSharp
                             if (nameInfoResult == NtStatus.STATUS_SUCCESS)
                             {
                                 nameInfo = (OBJECT_NAME_INFORMATION)Marshal.PtrToStructure(pNameInfo, typeof(OBJECT_NAME_INFORMATION));
+                                objectName = nameInfo.Name.ToString();
                             }
-                            else
-                            {
-                                // オブジェクトの名称を取得できなかった。
-                                nameInfo = default(OBJECT_NAME_INFORMATION);
-                            }
+                        }
+
+                        if (string.IsNullOrEmpty(objectName) != true)
+                        {
+                            objectName = string.Concat("\"", GetRegularFileNameFromDevice(objectName), "\"");
                         }
 
                         // 結果の表示
                         // basicInfo.HandleCount は、複製しているため必ず 1 つ参照が増えている。これを減らして表示する。
-                        Console.WriteLine("\t{0}\t\"{1}\"\t\"{2}\"", basicInfo.HandleCount - 1, typeInfoName, GetRegularFileNameFromDevice(nameInfo.Name.ToString()));
+                        Console.WriteLine("\t{0}\t\"{1}\"\t{2}", basicInfo.HandleCount - 1, typeInfoName, objectName);
 
                         // ハンドルを複製したときに、元のハンドルにクローズ操作の保護属性が含まれていた場合、
                         // 保護状態のままハンドルを複製する。そのため、保護を解いてあげないと、閉じることができない。
