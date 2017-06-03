@@ -11612,7 +11612,7 @@ namespace HandleCSharp
 
                 //Console.WriteLine("Handles: {0}\r\n", nHandles);
 
-                Console.WriteLine("\"Handle\"\t\"PID\"\t\"GrantedAccess\"\t\"Attributes\"\t\"Count\"\t\"Type\"\t\"Name\"");
+                Console.WriteLine("Handle\tPID\tGrantedAccess\tAttributes\tCount\tType\tName");
 
                 // 取得できたハンドル分繰り返す
                 for (int iHandle = 0; iHandle < nHandles; iHandle++)
@@ -11650,7 +11650,7 @@ namespace HandleCSharp
                         if (hProcess == IntPtr.Zero)
                         {
                             // そのプロセスは開けなかった。
-                            Console.WriteLine("\t\t\"{0}\"\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
+                            Console.WriteLine("\t\t{0}\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
                             continue;
                         }
 
@@ -11660,7 +11660,7 @@ namespace HandleCSharp
                         if (dupResult != NtStatus.STATUS_SUCCESS)
                         {
                             // そのハンドルは複製できなかった。
-                            Console.WriteLine("\t\t\"{0}\"\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
+                            Console.WriteLine("\t\t{0}\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
                             continue;
                         }
 
@@ -11679,7 +11679,7 @@ namespace HandleCSharp
                         if (basicInfoResult != NtStatus.STATUS_SUCCESS)
                         {
                             // オブジェクト基本情報を取得できなかった。
-                            Console.WriteLine("\t\t\"{0}\"\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
+                            Console.WriteLine("\t\t{0}\t", typeIndexToTypeName[handleInfo.ObjectTypeIndex]);
                             continue;
                         }
 
@@ -11724,12 +11724,12 @@ namespace HandleCSharp
 
                         if (string.IsNullOrEmpty(objectName) != true)
                         {
-                            objectName = string.Concat("\"", GetRegularFileNameFromDevice(objectName), "\"");
+                            objectName = GetRegularFileNameFromDevice(objectName);
                         }
 
                         // 結果の表示
                         // basicInfo.HandleCount は、複製しているため必ず 1 つ参照が増えている。これを減らして表示する。
-                        Console.WriteLine("\t{0}\t\"{1}\"\t{2}", basicInfo.HandleCount - 1, typeInfoName, objectName);
+                        Console.WriteLine("\t{0}\t{1}\t{2}", basicInfo.HandleCount - 1, typeInfoName, objectName);
 
                         // ハンドルを複製したときに、元のハンドルにクローズ操作の保護属性が含まれていた場合、
                         // 保護状態のままハンドルを複製する。そのため、保護を解いてあげないと、閉じることができない。
