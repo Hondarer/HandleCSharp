@@ -11409,6 +11409,13 @@ namespace HandleCSharp
                 {
                     throw new Win32Exception(result.ToString());
                 }
+                
+                // 情報が増加傾向にある場合、5 回リトライしてもなお STATUS_INFO_LENGTH_MISMATCH になりうるので
+                // リトライが続く場合、あらかじめ、多めに領域を取っておく。
+                if (tries > 2)
+                {
+                    infoLength += 0x10000;
+                }
             }
 
             throw new Win32Exception(result.ToString());
